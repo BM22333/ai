@@ -1,0 +1,313 @@
+/* ============================================
+   AIChat — Refined Ink & Paper Design System
+   ============================================ */
+
+/* ----- Design Tokens ----- */
+:root {
+  /* Color Palette */
+  --color-bg-page:        #FAFAF8;
+  --color-bg-surface:     #FFFFFF;
+  --color-bg-surface-hover: #F5F4F0;
+  --color-bg-sidebar:     #F3F2EE;
+  --color-bg-overlay:     rgba(26, 26, 28, 0.35);
+
+  --color-primary:        #4F46E5;
+  --color-primary-hover:  #4338CA;
+  --color-primary-light:  #EEF2FF;
+  --color-primary-border: #C7D2FE;
+
+  --color-text-primary:   #1A1A1C;
+  --color-text-secondary: #6B6570;
+  --color-text-tertiary:  #9E99A4;
+  --color-text-inverse:   #FFFFFF;
+
+  --color-success:        #059669;
+  --color-success-light:  #ECFDF5;
+  --color-success-border: #A7F3D0;
+  --color-warning:        #D97706;
+  --color-warning-light:  #FFFBEB;
+  --color-danger:         #DC2626;
+  --color-danger-light:   #FEF2F2;
+  --color-info:           #6366F1;
+
+  --color-border:         #E7E5E4;
+  --color-border-light:   #F0EFED;
+
+  /* Shadows */
+  --shadow-sm:    0 1px 2px rgba(26, 26, 28, 0.04);
+  --shadow-md:    0 4px 12px rgba(26, 26, 28, 0.06);
+  --shadow-lg:    0 12px 32px rgba(26, 26, 28, 0.08);
+  --shadow-xl:    0 20px 48px rgba(26, 26, 28, 0.12);
+
+  /* Typography */
+  --font-heading: 'Noto Serif SC', 'Source Han Serif SC', 'STSong', serif;
+  --font-body:    'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --font-size-xs:    0.75rem;
+  --font-size-sm:    0.8125rem;
+  --font-size-base:  0.9375rem;
+  --font-size-md:    1.0625rem;
+  --font-size-lg:    1.25rem;
+  --font-size-xl:    1.625rem;
+  --font-size-2xl:   2rem;
+
+  --font-weight-normal:   400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+
+  --line-height-tight:   1.3;
+  --line-height-normal:  1.6;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing (4px base) */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Radii */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* Sizing */
+  --sidebar-width: 280px;
+
+  /* Element Plus overrides */
+  --el-color-primary:       var(--color-primary);
+  --el-color-primary-light-3: var(--color-primary-light);
+  --el-color-primary-light-5: var(--color-primary-light);
+  --el-color-primary-light-7: var(--color-primary-light);
+  --el-color-primary-light-9: var(--color-bg-page);
+  --el-color-primary-dark-2: var(--color-primary-hover);
+  --el-color-success:       var(--color-success);
+  --el-color-warning:       var(--color-warning);
+  --el-color-danger:        var(--color-danger);
+  --el-color-info:          var(--color-info);
+  --el-text-color-primary:  var(--color-text-primary);
+  --el-text-color-regular:  var(--color-text-secondary);
+  --el-text-color-secondary:var(--color-text-tertiary);
+  --el-text-color-placeholder: var(--color-text-tertiary);
+  --el-border-color:        var(--color-border);
+  --el-border-color-light:  var(--color-border-light);
+  --el-border-radius-base:  var(--radius-md);
+  --el-border-radius-small: var(--radius-sm);
+  --el-bg-color:            var(--color-bg-surface);
+  --el-bg-color-page:       var(--color-bg-page);
+  --el-font-family:         var(--font-body);
+  --el-box-shadow-light:    var(--shadow-md);
+  --el-box-shadow:          var(--shadow-lg);
+}
+
+/* ----- Dark Mode ----- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-page:         #1A1A1C;
+    --color-bg-surface:      #252528;
+    --color-bg-surface-hover:#2F2F33;
+    --color-bg-sidebar:      #202023;
+    --color-bg-overlay:      rgba(0, 0, 0, 0.6);
+
+    --color-primary:         #818CF8;
+    --color-primary-hover:   #A5B4FC;
+    --color-primary-light:   #1E1B4B;
+    --color-primary-border:  #3730A3;
+
+    --color-text-primary:    #F0EFED;
+    --color-text-secondary:  #A8A3B0;
+    --color-text-tertiary:   #6B6570;
+    --color-text-inverse:    #1A1A1C;
+
+    --color-success:         #34D399;
+    --color-success-light:   #064E3B;
+    --color-success-border:  #065F46;
+    --color-warning:         #FBBF24;
+    --color-warning-light:   #78350F;
+    --color-danger:          #F87171;
+    --color-danger-light:    #7F1D1D;
+    --color-info:            #818CF8;
+
+    --color-border:          #3A3A3D;
+    --color-border-light:    #2F2F33;
+
+    --shadow-sm:    0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg:    0 12px 32px rgba(0, 0, 0, 0.5);
+    --shadow-xl:    0 20px 48px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ----- Global Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ----- Paper Grain Texture ----- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: 0.6;
+}
+
+/* ----- Accessibility ----- */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----- Scrollbar ----- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-tertiary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* ----- Element Plus Global Refinements ----- */
+.el-button {
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+}
+
+.el-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-md);
+}
+.el-card__header {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.el-input__wrapper,
+.el-textarea__inner {
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.el-input__wrapper:hover,
+.el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px var(--color-primary-border);
+}
+
+.el-dialog {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+.el-dialog__header {
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-5) var(--space-6);
+}
+.el-dialog__body {
+  padding: var(--space-6);
+}
+.el-dialog__footer {
+  border-top: 1px solid var(--color-border-light);
+  padding: var(--space-4) var(--space-6);
+}
+
+.el-dropdown-menu {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+.el-message-box {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.el-tag {
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.el-table {
+  --el-table-border-color: var(--color-border-light);
+  --el-table-header-bg-color: var(--color-bg-page);
+}
+.el-table th.el-table__cell {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background-color: var(--color-bg-page);
+}
+
+/* ----- Keyframes ----- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Utility ----- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
