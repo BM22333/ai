@@ -1,0 +1,24 @@
+
+cache:
+  ttl: 10
+
+redis:
+    host: localhost
+    password: 352233
+
+datasource:
+  password: 352233
+
+jwt:
+  config:
+    secret: beiiming-ai-chat-secret-key-2024-secure-jwt-hs256
+    expiration: 1800000  # 30分钟（毫秒）
+    token-name: beiming
+    refresh-token-name: beiming-refresh
+    refresh-expiration: 86400000  # 1天（毫秒）
+
+login:
+  security:
+    max-fail-count: 5          # 最大失败次数
+    fail-time-window: 300000   # 失败次数统计时间窗口（5分钟）
+    lock-duration: 1800000     # 锁定时长（30分钟）
